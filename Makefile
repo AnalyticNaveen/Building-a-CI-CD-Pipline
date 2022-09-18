@@ -6,6 +6,6 @@ test:
 	#python -m pytest -vv test_hello.py
 
 lint:
-	pylint --disable=R,C app.py
+	pylint --disable=R,C,W1203,bare-except --fail-under=6  app.py
 
 all: install lint test
