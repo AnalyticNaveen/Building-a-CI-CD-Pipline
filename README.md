@@ -15,7 +15,8 @@ Any commits/merges to the master branch of the repository "main" is considered t
 This project was carried out using Agile methodologies and details of the planning can be view in the below artifacts:
 
 A [link](https://trello.com/b/Vj5cPxHs/building-a-ci-cd-pipline) to a Trello board for the project
-A link to a spreadsheet that includes the original and final project plan
+
+A [link](https://1drv.ms/x/s!An4-ExqtiP10igrbXPRUhq7GxwwR) to a spreadsheet that includes the original and final project plan
 
 ## Instructions
 ![azure_cicd_architecture](https://user-images.githubusercontent.com/104189782/191111747-1dc9a881-9a24-45ea-a478-658a367e47c3.png)
