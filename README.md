@@ -93,8 +93,18 @@ scikit-learn==0.20.3
 joblib==1.1.0
 locust==2.12.0
 ```
+4. Github action
 
-4. Prediction.
+Create a github action workflow . edit the yml files as per requirement. 
+once it is set. if do any commit , codes will be automatically tested and linted in github action
+if build is succeed . it look like below image
+
+![passing git action whole](https://user-images.githubusercontent.com/104189782/191118526-f5fb2fcc-65de-4482-843a-c88b76c9bfbb.png)
+
+![passing build](https://user-images.githubusercontent.com/104189782/191118552-0abd16db-3651-4329-8850-c350c90c89dc.png)
+
+
+5. Prediction.
 
 Once all the libraries and dependencies are installed we can do our prediction for this we run below command 
 
@@ -105,45 +115,59 @@ the result of the prediction is 20.35373177134412
 
 ![prediction new](https://user-images.githubusercontent.com/104189782/191116969-bea4fc46-f5f2-4004-89b5-babe63e77cd3.png)
 
-5. Deploying weebapp
+
+6. Deploying weebapp
 
 Now, that the app is succesfully running locally, it can be deployed as an Azure WebApp and make requests to the API
 ```bash
 az webapp up --name flaskwebappproject --resource-group Azuredevops --runtime "PYTHON:3.7"
 ```
 
+Once the webapp is deployed it looks like this 
 
-App Home Page
+![webapp](https://user-images.githubusercontent.com/104189782/191119032-e64ce548-df0c-47ae-a072-ae18d8e785a2.png)
 
-Once the application is deployed, we can make an API request using the command NOTE: Change the url in the file 'make_predict_azure_app.sh'
 
-sh ./make_predict_azure_app.sh
-Make request to the WebApp
+7. Creating Azure CICD pipeline 
 
-Logs from the webapp can be viewed using the command
+follow the below steps to create a cicd pipeline
 
-az webapp log tail
-Logs from the WebApp
+Create a Devops Project  -- for this project we have created Flask-ML-service 
 
-Azure pipeline can now be configured for the webapp as detailed below: Note the official documentation should be referred to and double checked as you setup CI/CD.
+Create a Service Connection -- naviagte to project setting and create service connection
 
-Create a Devops Project Devops Project
-
-Create a Service Connection Service Connection
+![service connection](https://user-images.githubusercontent.com/104189782/191121290-d8991dc7-2764-4343-ab5a-42c8ddd1e6fa.png)
 
 Create a Agent Pool Agent Pool
 
-Create Azure Pipeline Azure Pipeline
+![agent pool](https://user-images.githubusercontent.com/104189782/191121367-c3ca36b5-bd05-4dce-862d-9ee7409d9f46.png)
 
-Run Pipeline to deploy the WebApp / Commit new features to the 'main' branch, which will automatically trigger the pipeline Deploy using Pipeline
+Deployed VM and onnect with agent pool 
+
+![vm deployed](https://user-images.githubusercontent.com/104189782/191121975-d21d0ad3-44b4-4da5-9893-ddc5f69eeab4.png)
+![Vm connected with agent pool](https://user-images.githubusercontent.com/104189782/191122118-5b2ab2b1-abc2-43b7-aae0-c930fa2c40b3.png)
+![self hosted agent online](https://user-images.githubusercontent.com/104189782/191122202-b0629230-6bba-4dba-9897-ca85596599f7.png)
+
+
+Create and Run Azure Pipeline
+
+![webapp deployed](https://user-images.githubusercontent.com/104189782/191122912-35552dd4-38d7-4157-914f-a1f05a8c22be.png)
+
+Commit change and test pipeline
+
+do some changes and test the pipline. it should be trigger with each commit.
+
+![webapp deployed1](https://user-images.githubusercontent.com/104189782/191122971-29040593-fbd4-4411-8988-6ac6f5578883.png)
+
 
 Load test using Locust Load Test
 
-Enhancements
-Several improvements can be made to this project, some of the ideas are:
+![locust load test](https://user-images.githubusercontent.com/104189782/191123317-b0699c4f-ac5b-4810-b288-e7945bcbcc55.png)
 
-Currently the 'main' branch is unprotected. This branch can be setup such that additions can only be made using Pull Requests
-Instead of using Azure Pipelines, GitHub actions itself can be used to setup continuos delivery/deployment
-This app can be containerized as a Docker app and be deployed using Kubernetes
-Demo
-https://www.youtube.com/watch?v=Vs4AUya_4g8
+## Enhancements
+
+providing proper package version or libraires can save a lot of time . without proper version we can get error in various steps 
+
+## youtube video
+
+https://youtu.be/wFuYOgghLt0
