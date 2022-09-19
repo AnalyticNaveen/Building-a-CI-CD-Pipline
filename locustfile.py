@@ -1,4 +1,4 @@
-from locustfile import HttpUser, task
+from locust import HttpUser, task
 from test_web import inputs
 
 class WebsiteTestUser(HttpUser):
