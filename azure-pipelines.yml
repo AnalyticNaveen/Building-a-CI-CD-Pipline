@@ -1,12 +1,15 @@
 trigger:
 - main
 
+pool: myAgentPool
+
+
 variables:
   # Replace the service connection name
-  azureServiceConnectionId: 'vnrservicesconnection'
+  azureServiceConnectionId: 'flask-ml-sp'
   
   # Replace 'mywebapp193576' with the existing Web App name
-  webAppName: 'vnrmlapi'
+  webAppName: 'flaskwebappproject'
 
   # Environment name
   environmentName: 'flask-ml-service'
