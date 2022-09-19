@@ -14,7 +14,7 @@ Any commits/merges to the master branch of the repository "main" is considered t
 ## Project Plan
 This project was carried out using Agile methodologies and details of the planning can be view in the below artifacts:
 
-A link to a Trello board for the project
+A [link](https://trello.com/b/Vj5cPxHs/building-a-ci-cd-pipline) to a Trello board for the project
 A link to a spreadsheet that includes the original and final project plan
 
 ## Instructions
