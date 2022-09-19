@@ -1,8 +1,6 @@
 trigger:
 - main
 
-pool: myAgentPool
-
 
 variables:
   # Replace the service connection name
@@ -12,10 +10,10 @@ variables:
   webAppName: 'flaskwebappproject'
 
   # Environment name
-  environmentName: 'flask-ml-service'
+  environmentName: 'Flask-ML-project'
 
   # Agent pool name
-  pool: myAgentPool
+  pool: flaskapp
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -67,7 +65,7 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : flask-ml-service'
+            displayName: 'Deploy Azure Web App : Flask-ML-project'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
